@@ -64,13 +64,13 @@ public class PMILifecycleListener implements KettleLifecycleListener {
       }
 
       // R dependency
-      weka.core.packageManagement.Package rPackage = weka.core.WekaPackageManager.getInstalledPackageInfo( "RPlugin" );
-      if ( rPackage == null ) {
-        String latestCompatibleVersion = getLatestVersion( "RPlugin" );
-        System.out.println(
-            "[PMI] RPlugin package is not installed - attempting to install version " + latestCompatibleVersion );
-        WekaPackageManager.installPackageFromRepository( "RPlugin", latestCompatibleVersion, System.out );
-      }
+      // weka.core.packageManagement.Package rPackage = weka.core.WekaPackageManager.getInstalledPackageInfo( "RPlugin" );
+      // if ( rPackage == null ) {
+      //   String latestCompatibleVersion = getLatestVersion( "RPlugin" );
+      //   System.out.println(
+      //       "[PMI] RPlugin package is not installed - attempting to install version " + latestCompatibleVersion );
+      //   WekaPackageManager.installPackageFromRepository( "RPlugin", latestCompatibleVersion, System.out );
+      // }
 
       // Weka dependency
       weka.core.packageManagement.Package
@@ -94,16 +94,16 @@ public class PMILifecycleListener implements KettleLifecycleListener {
         WekaPackageManager.installPackageFromRepository( "distributedWekaBase", latestCompatibleVersion, System.out );
       }
 
-      weka.core.packageManagement.Package
-          distributedWekaSparkDevPackage =
-          weka.core.WekaPackageManager.getInstalledPackageInfo( "distributedWekaSpark2Dev" );
-      if ( distributedWekaSparkDevPackage == null ) {
-        String latestCompatibleVersion = getLatestVersion( "distributedWekaSpark2Dev" );
-        System.out.println( "[PMI] distributed Weka Spark package is not installed - attempting to install version "
-            + latestCompatibleVersion );
-        WekaPackageManager
-            .installPackageFromRepository( "distributedWekaSpark2Dev", latestCompatibleVersion, System.out );
-      }
+      // weka.core.packageManagement.Package
+      //     distributedWekaSparkDevPackage =
+      //     weka.core.WekaPackageManager.getInstalledPackageInfo( "distributedWekaSpark2Dev" );
+      // if ( distributedWekaSparkDevPackage == null ) {
+      //   String latestCompatibleVersion = getLatestVersion( "distributedWekaSpark2Dev" );
+      //   System.out.println( "[PMI] distributed Weka Spark package is not installed - attempting to install version "
+      //       + latestCompatibleVersion );
+      //   WekaPackageManager
+      //       .installPackageFromRepository( "distributedWekaSpark2Dev", latestCompatibleVersion, System.out );
+      // }
 
       // see if we can install a netlib native package to speed up linear regression in Weka.
       /*if ( thisName.toLowerCase().contains( "mac" ) ) {
@@ -143,27 +143,27 @@ public class PMILifecycleListener implements KettleLifecycleListener {
 
       // DL4j dependency. The latest version of wekaDl4j comes with CPU support and instructions on how to
       // install GPU support
-      weka.core.packageManagement.Package
-          dl4jPackage =
-          weka.core.WekaPackageManager.getInstalledPackageInfo( "wekaDeeplearning4j" );
-      if ( dl4jPackage == null ) {
-        String latestCompatibleVersion = getLatestVersion( "wekaDeeplearning4j" );
-        System.out.println( "[PMI] wekaDeeplearning4j package is not installed - attempting to install version "
-            + latestCompatibleVersion );
-        weka.core.WekaPackageManager
-            .installPackageFromRepository( "wekaDeeplearning4j", latestCompatibleVersion, System.out );
-      }
+      // weka.core.packageManagement.Package
+      //     dl4jPackage =
+      //     weka.core.WekaPackageManager.getInstalledPackageInfo( "wekaDeeplearning4j" );
+      // if ( dl4jPackage == null ) {
+      //   String latestCompatibleVersion = getLatestVersion( "wekaDeeplearning4j" );
+      //   System.out.println( "[PMI] wekaDeeplearning4j package is not installed - attempting to install version "
+      //       + latestCompatibleVersion );
+      //   weka.core.WekaPackageManager
+      //       .installPackageFromRepository( "wekaDeeplearning4j", latestCompatibleVersion, System.out );
+      // }
 
       // TODO
-      weka.core.packageManagement.Package
-          kerasZooPackage =
-          weka.core.WekaPackageManager.getInstalledPackageInfo( "kerasZoo" );
-      if ( kerasZooPackage == null ) {
-        String latestCompatibleVersion = getLatestVersion( "kerasZoo" );
-        System.out.println(
-            "[PMI] kerasZoo package is not installed - attempting to install version " + latestCompatibleVersion );
-        weka.core.WekaPackageManager.installPackageFromRepository( "kerasZoo", latestCompatibleVersion, System.out );
-      }
+      // weka.core.packageManagement.Package
+      //     kerasZooPackage =
+      //     weka.core.WekaPackageManager.getInstalledPackageInfo( "kerasZoo" );
+      // if ( kerasZooPackage == null ) {
+      //   String latestCompatibleVersion = getLatestVersion( "kerasZoo" );
+      //   System.out.println(
+      //       "[PMI] kerasZoo package is not installed - attempting to install version " + latestCompatibleVersion );
+      //   weka.core.WekaPackageManager.installPackageFromRepository( "kerasZoo", latestCompatibleVersion, System.out );
+      // }
     } catch ( Exception e ) {
       e.printStackTrace();
     }

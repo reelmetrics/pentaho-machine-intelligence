@@ -65,7 +65,6 @@ public abstract class PMIEngine {
       if ( engineNames.length() == 0 ) {
         engineNames = System.getenv( SUPPORTED_ENGINE_ENV_KEY );
       }
-      List<String> availableEngines = new ArrayList<>();
       if ( engineNames != null && engineNames.length() > 0 ) {
         String[] names = engineNames.split( "," );
         for ( String n : names ) {
@@ -82,13 +81,13 @@ public abstract class PMIEngine {
       }
 
       // nothing specified in the supported engine key, so add all the defaults
-      if ( availableEngines.size() == 0 ) {
+      if ( s_availableEngines.size() == 0 ) {
         s_availableEngines.put( WekaEngine.ENGINE_NAME, WekaEngine.ENGINE_CLASS );
         s_availableEngines.put( PythonEngine.ENGINE_NAME, PythonEngine.ENGINE_CLASS );
-        s_availableEngines.put( REngine.ENGINE_NAME, REngine.ENGINE_CLASS );
-        s_availableEngines.put( MLlibEngine.ENGINE_NAME, MLlibEngine.ENGINE_CLASS );
-        s_availableEngines.put( DL4jEngine.ENGINE_NAME, DL4jEngine.ENGINE_CLASS );
-        s_availableEngines.put( KerasEngine.ENGINE_NAME, KerasEngine.ENGINE_CLASS );
+        //s_availableEngines.put( REngine.ENGINE_NAME, REngine.ENGINE_CLASS );
+        //s_availableEngines.put( MLlibEngine.ENGINE_NAME, MLlibEngine.ENGINE_CLASS );
+        //s_availableEngines.put( DL4jEngine.ENGINE_NAME, DL4jEngine.ENGINE_CLASS );
+        //s_availableEngines.put( KerasEngine.ENGINE_NAME, KerasEngine.ENGINE_CLASS );
       }
     }
   }
